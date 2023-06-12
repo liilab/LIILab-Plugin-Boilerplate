@@ -8,6 +8,8 @@ pnpm-debug.log*
 pnpm-lock.yaml
 lerna-debug.log*
 
+package-lock.json
+composer.lock
 node_modules
 dist
 dist-ssr
