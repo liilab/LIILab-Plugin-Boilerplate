@@ -1,0 +1,21 @@
+{
+	"name": "liilab/liilab-plugin-boilerplate",
+	"description": "A plugin to demonstrate Vite for LIILab Plugin Boilerplate",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
+			"name": "LII Lab",
+			"email": "mail.liilab@gmail.com"
+		}
+	],
+	"require": {
+		"kucrut/vite-for-wp": "^0.5.2"
+	},
+	"autoload": {
+        "psr-4": {
+            "LIILabPluginBoilerplate\\": "includes/"
+        },
+        "files": []
+    }
+}
