@@ -28,6 +28,10 @@ class Menu
     public function admin_enqueue_scripts()
     {
         Vite\enqueue_asset( LIILabPluginBoilerplate_PATH . '/dist', 'src/main.tsx',['handle' => 'vite-for-wp-react','in-footer' => true]);
+
+        // wp_enqueue_style('liilab-plugin-boilerplate-admin-css', LIILabPluginBoilerplate_URL . '/dist/assets/main-2f422850.css', [], LIILabPluginBoilerplate_VERSION);
+        // wp_enqueue_script('liilab-plugin-boilerplate-admin-js', LIILabPluginBoilerplate_URL . '/dist/assets/main-273f4d52.js', [], LIILabPluginBoilerplate_VERSION , true);
+       
     }
 
     /**
