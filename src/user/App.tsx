@@ -4,6 +4,8 @@ import UserCard from "./Components/UserCard";
 import axios from "axios";
 import { UserInfo, UserinfoShortcodeAttributes } from "../shared/Types";
 
+const home_url = (window as any).userLocalize.home_url;
+
 export default function App(props: UserinfoShortcodeAttributes) {
   const { id } = props;
 
@@ -12,7 +14,7 @@ export default function App(props: UserinfoShortcodeAttributes) {
   useEffect(() => {
     axios
       .get(
-        "http://localhost/wordpress1/wp-json/liilab-plugin-boilerplate/v1/user-info/" +
+      home_url + "wp-json/liilab-plugin-boilerplate/v1/user-info/" +
           id
       )
       .then((response) => {
