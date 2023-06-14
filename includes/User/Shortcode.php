@@ -31,7 +31,7 @@ class Shortcode
      */
     public function enqueue_scripts()
     {
-        Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist/user', 'src/user/main.tsx', ['handle' => 'liilab-user', 'in-footer' => true]);
+        Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/user/main.tsx', ['handle' => 'liilab-user', 'in-footer' => true]);
 
         // Define the data you want to pass to the script
         $data = array(
