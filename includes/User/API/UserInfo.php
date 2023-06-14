@@ -69,6 +69,15 @@ class UserInfo extends RestController
                 'avatar' => 'https://media.licdn.com/dms/image/D5603AQH7R4yNbGurRA/profile-displayphoto-shrink_200_200/0/1679336553057?e=1692230400&v=beta&t=6QU_NjwL1ZcECOgQ8kb87O-mORbpeW0ZKch3MZ-qOR0',
             ];
         }
+        else{
+            $user_info = [
+                'id' => 2,
+                'name' => "John Doe",
+                'email' => "john@gmail.com",
+                'occupation' => 'Wordpress Engineer',
+                'avatar' => 'https://media.licdn.com/dms/image/D5603AQEOjP3ON2knRg/profile-displayphoto-shrink_800_800/0/1677507598430?e=1692230400&v=beta&t=gm475tVtNyY_i_6djH2DS7vVTcdBE5kJj0kf88-3Tcc',
+            ];
+        }
 
         return rest_ensure_response($user_info);
     }

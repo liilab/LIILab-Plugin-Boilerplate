@@ -57,7 +57,7 @@ class Shortcode
     public function liilab_current_user_info_callback($atts)
     {
         $atts = shortcode_atts(array(
-            'id' => '',
+            'id' => '0',
         ), $atts, 'liilab_current_user_info');
 
         $atts = htmlspecialchars(json_encode($atts));
