@@ -1,12 +1,7 @@
 import React from "react";
-import { useState } from "react";
 import "./index.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  const text: string = "Hello TypeScript";
-  console.log(text);
 
   return (
     <section className="mt-4">
@@ -39,8 +34,7 @@ function App() {
           We invest in the world’s potential
         </h1>
         <p className="mb-8 text-lg font-normal lg:text-xl sm:px-16 xl:px-48 text-gray-400">
-          Here at Flowbite we focus on markets where technology, innovation, and
-          capital can unlock long-term value and drive economic growth.
+          (okey, this is Admin site)
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <a

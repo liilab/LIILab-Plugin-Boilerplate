@@ -86,6 +86,9 @@ final class LIILabPluginBoilerplate
         if (is_admin()) {
             new LIILabPluginBoilerplate\Admin();
         }
+        else {
+            new LIILabPluginBoilerplate\User();
+        }
     }
 
     /**

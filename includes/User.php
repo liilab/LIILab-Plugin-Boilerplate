@@ -2,12 +2,12 @@
 
 namespace LIILabPluginBoilerplate;
 use LIILabPluginBoilerplate\Traits\Singleton;
-use LIILabPluginBoilerplate\Admin\Menu, LIILabPluginBoilerplate\Admin\API;
+use LIILabPluginBoilerplate\User\Shortcode, LIILabPluginBoilerplate\User\API;
 
 /**
- * The admin class
+ * The User class
  */
-class Admin {
+class User {
     
     use Singleton;
 
@@ -15,7 +15,7 @@ class Admin {
      * Initialize the class
      */
     function __construct() {
-        new Menu();
+        new Shortcode();
         new API();
     }
 }
