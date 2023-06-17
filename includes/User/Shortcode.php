@@ -42,8 +42,8 @@ class Shortcode
         wp_localize_script('liilab-user', 'userLocalize', $data);
 
 
-        // wp_enqueue_style('liilab-plugin-boilerplate-user-css', LIILabPluginBoilerplate_URL . '/dist/user/assets/main-2f422850.css', [], LIILabPluginBoilerplate_VERSION);
-        // wp_enqueue_script('liilab-plugin-boilerplate-user-js', LIILabPluginBoilerplate_URL . '/dist/user/assets/main-273f4d52.js', [], LIILabPluginBoilerplate_VERSION , true);
+        // wp_enqueue_style('liilab-plugin-boilerplate-user-css', LIILabPluginBoilerplate_URL . '/dist/index.css', [], LIILabPluginBoilerplate_VERSION);
+        // wp_enqueue_script('liilab-plugin-boilerplate-user-js', LIILabPluginBoilerplate_URL . '/dist/user.js', ['jquey], LIILabPluginBoilerplate_VERSION , true);
     }
 
 
