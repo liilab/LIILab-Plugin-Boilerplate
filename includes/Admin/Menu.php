@@ -58,6 +58,12 @@ class Menu
             'manage_options',
             'admin.php?page=liilab-plugin-boilerplate#/contact',
         );
+
+        // echo '<pre>';
+
+        // var_dump($submenu);
+
+        // echo '</pre>';
     }
 
     /**

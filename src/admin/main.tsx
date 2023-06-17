@@ -1,12 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from '../admin/App';
+import * as React from "react";
+import ReactDOM from "react-dom/client";
+import { createHashRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
 
+import Dashboard from "./pages/Dashboard";
+import Contact from "./pages/Contact";
 
-const root = ReactDOM.createRoot(document.getElementById("liilab-plugin-boilerplate") as HTMLElement);
-root.render(
+const router = createHashRouter([
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+]);
+
+ReactDOM.createRoot(
+  document.getElementById("liilab-plugin-boilerplate") as HTMLElement
+).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
-
