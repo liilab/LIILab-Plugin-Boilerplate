@@ -9,7 +9,7 @@ export default function UserCard(userInfo: UserInfo) {
       <div className="w-full max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
         <div className="flex flex-col items-center pb-10">
           <img
-            className="w-24 h-24 mb-3 rounded-full shadow-lg"
+            className="w-24 h-24 my-5 rounded-full shadow-lg"
             src={avatar}
             alt={name}
           />
