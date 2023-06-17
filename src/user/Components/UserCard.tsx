@@ -7,7 +7,6 @@ export default function UserCard(userInfo: UserInfo) {
   return (
     <>
       <div className="w-full max-w-sm rounded-lg shadow bg-gray-800 border-gray-700">
-        =
         <div className="flex flex-col items-center pb-10">
           <img
             className="w-24 h-24 mb-3 rounded-full shadow-lg"

@@ -28,7 +28,7 @@ export default function App(props: UserinfoShortcodeAttributes) {
 
   return (
     <>
-      <UserCard {...userInfo} />
+      <UserCard {...userInfo}  />
     </>
   );
 }

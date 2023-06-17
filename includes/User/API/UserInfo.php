@@ -79,8 +79,6 @@ class UserInfo extends RestController
             ];
         }
 
-        var_dump($user_info);
-
         return rest_ensure_response($user_info);
     }
 
