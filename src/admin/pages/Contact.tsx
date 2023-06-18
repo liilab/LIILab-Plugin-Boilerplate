@@ -1,6 +1,17 @@
 import React from "react";
+import { useState } from "react";
 
 export default function Contact() {
+  const [count, setCount] = useState(0);
+
+  const increaseCount = () => {
+    setCount(count + 1);
+  };
+
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
@@ -12,11 +23,11 @@ export default function Contact() {
             From checkout to global sales tax compliance, companies around the
             world use Flowbite to simplify their payment stack.
           </p>
-          <a
-            href="#"
-            className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900"
+          <button
+            onClick={decreaseCount}
+            className={`custom-style inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg  focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900`}
           >
-            Get started
+            Decrease count lop
             <svg
               className="w-5 h-5 ml-2 -mr-1"
               fill="currentColor"
@@ -29,13 +40,13 @@ export default function Contact() {
                 clipRule="evenodd"
               />
             </svg>
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
+            onClick={increaseCount}
             className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
           >
-            Speak to Sales
-          </a>
+            Increase count {count}
+          </button>
         </div>
         <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
           <img

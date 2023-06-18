@@ -21,6 +21,24 @@ class Shortcode
     {
         add_shortcode('liilab_current_user_info', [$this, 'liilab_current_user_info_callback']);
         add_action('wp_enqueue_scripts', [$this, 'enqueue_scripts']);
+        add_filter('script_loader_tag', array($this, 'add_module_to_script'), 10, 3);
+    }
+
+    /**
+     * Add module to script
+     *
+     * @param string $tag
+     * @param string $handle
+     * @param string $src
+     * @return string
+     */
+
+    public function add_module_to_script($tag, $handle, $src)
+    {
+        if ($handle === 'liilab-plugin-boilerplate-user') {
+            $tag = '<script type="module" id="liilab-plugin-boilerplate-user" src="' . esc_url($src) . '"></script>';
+        }
+        return $tag;
     }
 
 
@@ -31,19 +49,19 @@ class Shortcode
      */
     public function enqueue_scripts()
     {
-        Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/user/main.tsx', ['handle' => 'liilab-user', 'in-footer' => true]);
+        if (defined('LIILabPluginBoilerplate_DEVELOPMENT') && LIILabPluginBoilerplate_DEVELOPMENT === 'yes') {
+            Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/user/main.tsx', ['handle' => 'liilab-plugin-boilerplate-user', 'in-footer' => true]);
+        } else {
 
-        // Define the data you want to pass to the script
-        $data = array(
-            'home_url' => home_url(),
-        );
+            wp_enqueue_style('liilab-plugin-boilerplate-user', LIILabPluginBoilerplate_URL . '/dist/css/main.css', [], LIILabPluginBoilerplate_VERSION);
+            wp_enqueue_script('liilab-plugin-boilerplate-user', LIILabPluginBoilerplate_URL . '/dist/js/user.js', ['jquery'], LIILabPluginBoilerplate_VERSION, true);
 
-        // Localize the script with the data
-        wp_localize_script('liilab-user', 'userLocalize', $data);
-
-
-        // wp_enqueue_style('liilab-plugin-boilerplate-user-css', LIILabPluginBoilerplate_URL . '/dist/index.css', [], LIILabPluginBoilerplate_VERSION);
-        // wp_enqueue_script('liilab-plugin-boilerplate-user-js', LIILabPluginBoilerplate_URL . '/dist/user.js', ['jquey], LIILabPluginBoilerplate_VERSION , true);
+            //Localize the script with new data
+            $data = array(
+                'home_url' => home_url(),
+            );
+            wp_localize_script('liilab-plugin-boilerplate-user', 'liilab_plugin_boilerplate_user_localize_script', $data);
+        }
     }
 
 

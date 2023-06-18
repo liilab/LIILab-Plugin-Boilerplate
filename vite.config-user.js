@@ -10,7 +10,7 @@ export default {
     build : {
       manifest: false,
       outDir: "dist",
-      emptyOutDir: true,
+      emptyOutDir: false,
       sourcemap: false,
       rollupOptions: {
         input: {

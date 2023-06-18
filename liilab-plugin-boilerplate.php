@@ -17,6 +17,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+define('LIILabPluginBoilerplate_PRODUCTION', 'yes');
+
 /**
  * The main plugin class
  */
@@ -42,6 +44,16 @@ final class LIILabPluginBoilerplate
         register_activation_hook(__FILE__, [$this, 'activate']);
 
         add_action('plugins_loaded', [$this, 'init_plugin']);
+        add_filter('script_loader_tag', array($this, 'addModuleToScript'), 10, 3);
+
+    }
+
+    public function addModuleToScript($tag, $handle, $src)
+    {
+        if ($handle === 'liilab-plugin-boilerplate-admin-js') {
+            $tag = '<script type="module" id="liilab-plugin-boilerplate-admin-js" src="' . esc_url($src) . '"></script>';
+        }
+        return $tag;
     }
 
 
