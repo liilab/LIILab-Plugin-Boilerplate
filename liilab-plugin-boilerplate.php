@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('LIILabPluginBoilerplate_PRODUCTION', 'yes');
+define('LIILabPluginBoilerplate_DEVELOPMENT', 'yes');
 
 /**
  * The main plugin class

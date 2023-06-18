@@ -1,5 +1,7 @@
 import React from "react";
 import { UserInfo } from "../../shared/Types";
+import Logo from "../assets/images/profile.png";
+import "./UserCard.scss";
 
 export default function UserCard(userInfo: UserInfo) {
   const { name, email, occupation, avatar } = userInfo;
@@ -10,7 +12,7 @@ export default function UserCard(userInfo: UserInfo) {
         <div className="flex flex-col items-center pb-10">
           <img
             className="w-24 h-24 my-5 rounded-full shadow-lg"
-            src={avatar}
+            src={Logo}
             alt={name}
           />
           <h5 className="mb-1 text-xl font-medium text-white">{name}</h5>
@@ -41,7 +43,7 @@ export default function UserCard(userInfo: UserInfo) {
           </div>
 
           <div className="flex mt-4 space-x-3 md:mt-6">
-            <p className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white  rounded-lg  focus:ring-4 focus:outline-none bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+            <p className="primary-button">
               Add friend
             </p>
             <p className="inline-flex items-center px-4 py-2 text-sm font-medium text-center border rounded-lg focus:ring-4 focus:outline-none bg-gray-800 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-700 focus:ring-gray-700">

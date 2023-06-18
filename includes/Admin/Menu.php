@@ -47,7 +47,7 @@ class Menu
     public function admin_enqueue_scripts()
     {
         if (defined('LIILabPluginBoilerplate_DEVELOPMENT') && LIILabPluginBoilerplate_DEVELOPMENT === 'yes') {
-            Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/admin/main.tsx', ['handle' => 'vite-for-wp-react', 'in-footer' => true]);
+            Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/admin/main.tsx', ['handle' => 'liilab-plugin-boilerplate-admin', 'in-footer' => true]);
         } else {
 
             wp_enqueue_style('liilab-plugin-boilerplate-admin', LIILabPluginBoilerplate_URL . '/dist/css/main.css', [], LIILabPluginBoilerplate_VERSION);
@@ -59,6 +59,11 @@ class Menu
                 true
             );
         }
+        //Localize the script with new data
+        $data = array(
+            'home_url' => home_url(),
+        );
+        wp_localize_script('liilab-plugin-boilerplate-admin', 'userLocalize', $data);
     }
 
     /**

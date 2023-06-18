@@ -55,13 +55,13 @@ class Shortcode
 
             wp_enqueue_style('liilab-plugin-boilerplate-user', LIILabPluginBoilerplate_URL . '/dist/css/main.css', [], LIILabPluginBoilerplate_VERSION);
             wp_enqueue_script('liilab-plugin-boilerplate-user', LIILabPluginBoilerplate_URL . '/dist/js/user.js', ['jquery'], LIILabPluginBoilerplate_VERSION, true);
-
-            //Localize the script with new data
-            $data = array(
-                'home_url' => home_url(),
-            );
-            wp_localize_script('liilab-plugin-boilerplate-user', 'liilab_plugin_boilerplate_user_localize_script', $data);
         }
+
+        //Localize the script with new data
+        $data = array(
+            'home_url' => home_url(),
+        );
+        wp_localize_script('liilab-plugin-boilerplate-user', 'userLocalize', $data);
     }
 
 
