@@ -18,7 +18,7 @@ export default function App(props: UserinfoShortcodeAttributes) {
 
   useEffect(() => {
     axios
-      .get(home_url + "wp-json/liilab-plugin-boilerplate/v1/user-info/" + id)
+      .get(home_url + "/wp-json/liilab-plugin-boilerplate/v1/user-info/" + id)
       .then((response) => {
         setUserInfo(response.data);
         //console.log(response.data);
