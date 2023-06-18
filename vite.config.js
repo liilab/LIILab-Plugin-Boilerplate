@@ -7,21 +7,25 @@ export default {
   ...create_config("", "dist", {
     plugins: [react(), liveReload(`${__dirname}/**/*\.php`)],
 
-    build : {
+    build: {
       manifest: false,
       outDir: "dist",
       emptyOutDir: true,
       sourcemap: false,
       rollupOptions: {
         input: {
-          admin: `${__dirname}/src/admin/main.tsx`,
-          user: `${__dirname}/src/user/main.tsx`,
+          admin: `${__dirname}/src/admin/admin.tsx`,
+          user: `${__dirname}/src/user/user.tsx`,
         },
         output: {
           chunkFileNames: "js/[name].js",
           entryFileNames: "js/[name].js",
 
           assetFileNames: ({ name }) => {
+            if (/\.(gif|jpe?g|png|svg)$/.test(name ?? '')){
+                return 'images/[name][extname]';
+            }
+
             if (/\.css$/.test(name ?? "")) {
               return "css/[name][extname]";
             }
@@ -29,6 +33,6 @@ export default {
           },
         },
       },
-    }
+    },
   }),
 };

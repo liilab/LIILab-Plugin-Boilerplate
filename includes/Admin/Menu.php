@@ -47,10 +47,10 @@ class Menu
     public function admin_enqueue_scripts()
     {
         if (defined('LIILabPluginBoilerplate_DEVELOPMENT') && LIILabPluginBoilerplate_DEVELOPMENT === 'yes') {
-            Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/admin/main.tsx', ['handle' => 'liilab-plugin-boilerplate-admin', 'in-footer' => true]);
+            Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/admin/admin.tsx', ['handle' => 'liilab-plugin-boilerplate-admin', 'in-footer' => true]);
         } else {
 
-            wp_enqueue_style('liilab-plugin-boilerplate-admin', LIILabPluginBoilerplate_URL . '/dist/css/main.css', [], LIILabPluginBoilerplate_VERSION);
+            wp_enqueue_style('liilab-plugin-boilerplate-admin', LIILabPluginBoilerplate_URL . '/dist/css/admin.css', [], LIILabPluginBoilerplate_VERSION);
             wp_enqueue_script(
                 'liilab-plugin-boilerplate-admin',
                 LIILabPluginBoilerplate_URL . '/dist/js/admin.js',

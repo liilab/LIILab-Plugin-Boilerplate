@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from '../user/App';
-import "./main.scss";
+import App from './App';
+import "./user.scss";
 
 
 const root = ReactDOM.createRoot(document.getElementById("liilab_current_user_info") as HTMLElement);

@@ -1,6 +1,6 @@
 import React from "react";
 import { UserInfo } from "../../shared/Types";
-import Logo from "../assets/images/profile.png";
+import Logo from "../../assets/images/profile.png";
 import "./UserCard.scss";
 
 export default function UserCard(userInfo: UserInfo) {
@@ -47,7 +47,7 @@ export default function UserCard(userInfo: UserInfo) {
               Add friend
             </p>
             <p className="inline-flex items-center px-4 py-2 text-sm font-medium text-center border rounded-lg focus:ring-4 focus:outline-none bg-gray-800 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-700 focus:ring-gray-700">
-              Message
+              Knock
             </p>
           </div>
         </div>

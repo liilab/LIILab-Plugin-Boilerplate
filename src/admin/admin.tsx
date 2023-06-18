@@ -1,7 +1,7 @@
 import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider } from "react-router-dom";
-import "./main.scss";
+import "./admin.scss";
 
 import Dashboard from "./pages/Dashboard";
 import Contact from "./pages/Contact";
