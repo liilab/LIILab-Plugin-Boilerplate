@@ -14,6 +14,6 @@ glob("liilab-plugin-boilerplate.php", function(err, files) {
         writeFile(item, result, 'utf8', function (err) {
             if (err) return console.log(err);
         });
-        console.log('✅  Development asset enqueued!');
+        console.log('✅  Production assets enqueued!');
     });
 });
