@@ -38,15 +38,21 @@ final class LIILabPluginBoilerplate
     private function __construct()
     {
         require_once __DIR__ . '/vendor/autoload.php';
-        
+
         $this->define_constants();
 
         register_activation_hook(__FILE__, [$this, 'activate']);
 
         add_action('plugins_loaded', [$this, 'init_plugin']);
         add_filter('script_loader_tag', array($this, 'addModuleToScript'), 10, 3);
-
     }
+
+
+    /*
+    * Add module type to script tag
+    *
+    * @param string $tag The script tag.
+    */
 
     public function addModuleToScript($tag, $handle, $src)
     {
@@ -97,8 +103,7 @@ final class LIILabPluginBoilerplate
 
         if (is_admin()) {
             new LIILabPluginBoilerplate\Admin();
-        }
-        else {
+        } else {
             new LIILabPluginBoilerplate\User();
         }
     }
