@@ -3,6 +3,7 @@ import "./AdminNotice.scss";
 
 export default function AdminNotice() {
   const [copied, setCopied] = React.useState(false);
+  const shortcode = "[liilab_current_user_info id='1']";
   return (
     <>
       <a
@@ -27,7 +28,7 @@ export default function AdminNotice() {
             }}
             onClick={(e: any) => {
               e.preventDefault();
-              const valueToCopy = String("[liilab_current_user_info]");
+              const valueToCopy = String(shortcode);
               navigator.clipboard.writeText(valueToCopy);
               setCopied(true);
 
@@ -37,7 +38,7 @@ export default function AdminNotice() {
               }, 5000);
             }}
           >
-            {'[liilab_current_user_info id="1"]'}
+            {shortcode}
           </span>
           </div>
       </a>
