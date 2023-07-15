@@ -1,6 +1,6 @@
 <?php
 
-namespace LIILabPluginBoilerplate\User;
+namespace LIILabPluginBoilerplate;
 
 use LIILabPluginBoilerplate\Traits\Singleton;
 

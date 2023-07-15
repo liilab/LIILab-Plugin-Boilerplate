@@ -106,6 +106,8 @@ final class LIILabPluginBoilerplate
         } else {
             new LIILabPluginBoilerplate\User();
         }
+
+        new LIILabPluginBoilerplate\API();
     }
 
     /**

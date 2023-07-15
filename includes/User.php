@@ -16,6 +16,5 @@ class User {
      */
     function __construct() {
         new Shortcode();
-        new API();
     }
 }

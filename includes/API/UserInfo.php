@@ -1,6 +1,6 @@
 <?php
 
-namespace LIILabPluginBoilerplate\User\API;
+namespace LIILabPluginBoilerplate\API;
 
 use LIILabPluginBoilerplate\Abstracts\RestController;
 

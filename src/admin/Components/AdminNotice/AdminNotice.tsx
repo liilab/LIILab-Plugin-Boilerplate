@@ -37,7 +37,7 @@ export default function AdminNotice() {
               }, 5000);
             }}
           >
-            {"[liilab_current_user_info]"}
+            {'[liilab_current_user_info id="1"]'}
           </span>
           </div>
       </a>

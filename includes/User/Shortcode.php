@@ -49,6 +49,7 @@ class Shortcode
      */
     public function enqueue_scripts()
     {
+
         if (defined('LIILabPluginBoilerplate_DEVELOPMENT') && LIILabPluginBoilerplate_DEVELOPMENT === 'yes') {
             Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/user/user.tsx', ['handle' => 'liilab-plugin-boilerplate-user', 'in-footer' => true]);
         } else {

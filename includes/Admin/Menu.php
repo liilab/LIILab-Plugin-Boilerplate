@@ -46,6 +46,11 @@ class Menu
      */
     public function admin_enqueue_scripts()
     {
+
+        if(!isset($_GET['page']) || $_GET['page'] !== 'liilab-plugin-boilerplate') {
+            return;
+        }
+
         if (defined('LIILabPluginBoilerplate_DEVELOPMENT') && LIILabPluginBoilerplate_DEVELOPMENT === 'yes') {
             Vite\enqueue_asset(LIILabPluginBoilerplate_PATH . '/dist', 'src/admin/admin.tsx', ['handle' => 'liilab-plugin-boilerplate-admin', 'in-footer' => true]);
         } else {
